@@ -1284,6 +1284,9 @@ section,
   align-items:center; 
   gap:.5rem
 }
+.btn-category {
+  margin: 5px;
+}
 
 /* End Card Layout*/
 

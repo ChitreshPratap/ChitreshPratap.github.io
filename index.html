@@ -281,12 +281,21 @@
         <p>A versatile toolkit for building smart, reliable automation solutions.</p>
       </div><!-- End Section Title -->
 
+        <!-- Filter Buttons -->
+      <div class="text-center mb-4">
+        <button class="btn btn-outline-primary btn-category" data-filter="all">All</button>
+        <button class="btn btn-outline-primary btn-category" data-filter="automation">Automation</button>
+        <button class="btn btn-outline-primary btn-category" data-filter="data">Data</button>
+        <button class="btn btn-outline-primary btn-category" data-filter="programming">Programming</button>
+        <button class="btn btn-outline-primary btn-category" data-filter="web">Web</button>
+      </div>
+
       <div class="container" data-aos="fade-up" data-aos-delay="100">
       
-        <div class="row g-4">                    
+        <div class="row g-4">                              
           
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="skill-card text-center p-4">
+          <div class="col-md-6 col-lg-4 cardfilter" data-aos="fade-up" data-aos-delay="100" data-category="automation">
+            <div class="skill-card text-center p-4" >
               <i class="bi bi-gear-fill fs-1 text-primary mb-3"></i>
               <h5 class="mb-3">Automation & Development</h5>
               <ul class="list-unstyled text-muted mb-4 skill-list">
@@ -300,8 +309,8 @@
             </div> 
           </div>
 
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="skill-card text-center p-4">
+          <div class="col-md-6 col-lg-4 cardfilter" data-aos="fade-up" data-aos-delay="100" data-category="automation">
+            <div class="skill-card text-center p-4" >
               <i class="bi bi-database-fill text-success fs-1 mb-3"></i>
               <h5 class="mb-3">Data and Databases</h5>
               <ul class="list-unstyled text-muted mb-4 skill-list">
@@ -315,7 +324,7 @@
             </div> 
           </div>
 
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-md-6 col-lg-4 cardfilter" data-aos="fade-up" data-aos-delay="100" data-category="web">
             <div class="skill-card text-center p-4">
               <i class="bi bi-code-slash text-danger fs-1 mb-3"></i>
               <h5 class="mb-3">Web & Tools</h5>
@@ -1121,6 +1130,35 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    // Filter functionality with fade animation
+    document.querySelectorAll('.btn-category').forEach(button => {
+      button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+
+    // Update button styles
+      document.querySelectorAll('.btn-category').forEach(btn => {
+        btn.classList.remove('btn-primary');
+        btn.classList.add('btn-outline-primary');
+      });
+      button.classList.remove('btn-outline-primary');
+      button.classList.add('btn-primary');
+
+    // Filter cards
+      document.querySelectorAll('.cardfilter').forEach(card => {
+        console.log(card.getAttribute('data-category'));
+        console.log(filter);
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+</script>
+
 
 </body>
 
