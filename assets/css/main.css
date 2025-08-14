@@ -17,6 +17,7 @@
   --nav-font: "Nunito",  sans-serif;
 }
 
+
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #1f1f1f; /* Background color for the entire website, including individual sections */
@@ -36,6 +37,18 @@
   --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #ececec; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
+
+/*Card Layout Colors*/
+:root{
+  --card-bg:#fff;
+  --card-text:#111;
+  --card-muted:#6c757d;
+  --card-gold:#ffc107;
+  --card-page-bg:#121212;
+  --card-page-text:#fff;
+  --card-soft:#ffffff0d;
+}
+
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
@@ -723,8 +736,8 @@ section,
 
 .hero .hero-visual .profile-container .profile-background {
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: -15px;
+  left: -15px;
   width: 100%;
   height: 100%;
   background: color-mix(in srgb, var(--accent-color), transparent 90%);
@@ -1228,6 +1241,53 @@ section,
 /*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
+
+/* Skill Cards (With Stars) */
+  .skill-card{    
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    transition: transform 0.3s;
+  }
+
+  .skill-card{    
+    background-color: var(--surface-color);
+    color:var(--text);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+  }
+
+  .skill-card:hover{
+    transform:translateY(-5px); 
+    box-shadow:0 12px 28px rgba(0,0,0,.15);
+  }
+
+  .skill-list li{
+    display:flex;
+    align-items:center; 
+    justify-content:space-between; 
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    gap:.5rem; 
+    padding:.25rem 0
+  }
+  .skill-stars{
+    color:var(--card-gold); 
+    margin-left:.5rem; 
+    white-space:nowrap
+  }
+.skill-left{
+  display:flex; 
+  align-items:center; 
+  gap:.5rem
+}
+
+/* End Card Layout*/
+
+
 .skills .skills-category {
   background-color: var(--surface-color);
   padding: 30px;
