@@ -43,7 +43,7 @@
   --card-bg:#fff;
   --card-text:#111;
   --card-muted:#6c757d;
-  --card-gold:#ffc107;
+  --card-gold: color-mix(in srgb, var(--default-color), transparent 60%);
   --card-page-bg:#121212;
   --card-page-text:#fff;
   --card-soft:#ffffff0d;
