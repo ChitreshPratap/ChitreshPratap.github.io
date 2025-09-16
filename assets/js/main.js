@@ -6,12 +6,15 @@
 * License: https://bootstrapmade.com/license/
 */
 
-(function() {
+(
+  function() {
   "use strict";
 
   /**
    * Header toggle
    */
+  
+
   const headerToggleBtn = document.querySelector('.header-toggle');
 
   function headerToggle() {
@@ -32,6 +35,7 @@
     });
 
   });
+
 
   /**
    * Toggle mobile nav dropdowns
@@ -226,4 +230,45 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  //addSkillData();
+
 })();
+
+function addSkillData(){
+    const skillData = [
+    { titleHeading: "titleHeading1", titleIcon:"bi bi-gear-fill", skillSets : [{skillIcon:"fas fa-industry",skillName:"Python",skillRatings:""},{skillIcon:"",skillName:"VBA",skillRatings:"★★★★☆"}]},
+    { titleHeading: "titleHeading2", titleIcon:"bi bi-gear-fill", skillSets : [{skillIcon:"fas fa-industry",skillName:"Python",skillRatings:""},{skillIcon:"",skillName:"VBA",skillRatings:"★★★☆☆"}]}
+  ];
+  var skillContainer = document.getElementById("skillGroupContainer");
+  skillData.forEach(itemSkill => {
+    var divTemp = document.createElement("div");
+    var tagStr= `
+                <div class="col-md-6 col-lg-4 isotope-item filter-automation" data-aos="fade-up" data-aos-delay="100">
+                  <div class="skill-card text-center p-4" >
+                    <i class="${itemSkill.titleIcon} fs-1 mb-3"></i>
+                    <h5 class="mb-3 skill-list-title">${itemSkill.titleHeading}</h5>
+                    <ul class="list-unstyled text-muted mb-4 skill-list">
+
+                    </ul>
+                  </div>
+                </div>
+              `;   
+          divTemp.innerHTML = tagStr.trim();
+          var skillGroupDiv= divTemp.firstChild;
+          skillContainer.appendChild(skillGroupDiv);
+          var skillUlTag = skillGroupDiv.getElementsByTagName("ul")[0];
+
+          var allSkillSets = itemSkill["skillSets"];
+          allSkillSets.forEach(eachSkillItem=>{
+            var tempSkillItem= document.createElement("li");
+            var skillSetStr = `
+              <li><span><i class="${eachSkillItem.skillIcon}"></i> ${eachSkillItem.skillName}</span><span class="skill-stars">${eachSkillItem.skillRatings}</span></li>
+            `;
+            tempSkillItem.innerHTML=skillSetStr.trim();
+            var reqSkillItem = tempSkillItem.firstChild;
+            skillUlTag.appendChild(reqSkillItem);
+          }
+          );
+        });
+
+}
