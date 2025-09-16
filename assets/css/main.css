@@ -1276,7 +1276,11 @@ section,
     box-shadow:0 12px 28px rgba(0,0,0,.15);
   }
 
+  .skill-list-title{
+    font-size: 1.7rem;
+  }
   .skill-list li{
+    font-size: 1.3rem;
     display:flex;
     align-items:center; 
     justify-content:space-between; 
@@ -1543,20 +1547,20 @@ section,
 }
 
 .resume .resume-section .resume-item h4 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: var(--heading-color);
   font-weight: 600;
 }
 
 .resume .resume-section .resume-item h5 {
-  font-size: 1rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
   color: var(--accent-color);
 }
 
 .resume .resume-section .resume-item .company {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   margin-bottom: 1rem;
   color: var(--heading-color);
 }
@@ -1570,6 +1574,7 @@ section,
 }
 
 .resume .resume-section .resume-item ul li {
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
   color: var(--default-color);
 }
