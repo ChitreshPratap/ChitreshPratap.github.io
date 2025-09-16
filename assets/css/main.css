@@ -50,6 +50,7 @@
 }
 
 
+
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
@@ -1430,6 +1431,42 @@ section,
   transition: all 0.3s;
 }
 
+.skill-filter .btn {
+  font-size: 1.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid transparent;
+}
+
+.skill-filter .btn.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.skill-filter .btn.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), black 15%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-color), transparent 60%);
+}
+
+.skill-filter .btn.btn-outline {
+  background-color: transparent;
+  color: var(--default-color);
+  border-color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.skill-filter .btn.btn-outline:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+
 @media (max-width: 991.98px) {
   .skills .skills-category {
     margin-bottom: 30px;
@@ -1449,6 +1486,11 @@ section,
     margin-bottom: 0;
   }
 }
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # Resume Section
@@ -1777,8 +1819,8 @@ section,
   }
 
 .portfolio-skill-badge { 
-  background-color:#0d6efd; 
-  color: var(--accent-color);
+  background-color: var(--card-muted); 
+  color: color-mix(in srgb, var(--accent-color), transparent 30%);
    margin: 2px;
     padding: 5px 8px;
      border-radius: 5px;
@@ -1786,7 +1828,7 @@ section,
        display: inline-block; 
       }
 .portfolio-company-title {
-    color: #0d6efd;
+    color: color-mix(in srgb, var(--accent-color), transparent 30%);;
     font-weight: bold; 
   }
 
